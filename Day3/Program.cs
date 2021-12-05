@@ -16,6 +16,7 @@ namespace Day3
             var sanitisedData = rawData.ParseListBitArray();
 
             Console.WriteLine(D3P1.GetPowerUsage(sanitisedData));
+            Console.WriteLine(D3P2.GetLifeSupportRating(sanitisedData));
         }
     }
 }

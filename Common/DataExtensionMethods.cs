@@ -9,13 +9,15 @@ namespace Common
 {
     public static class RawDataExtensionMethods
     {
-        public static List<int> ParseListInt(this string data)
+        //Day1
+        public static List<int> ParseListIntFromCrList(this string data)
         {
             return data.DelimitByCrLf()
                 .Select(int.Parse)
                 .ToList();
         }
         
+        //Day2
         public static List<DirectionalInstruction> ParseListDirectionalInstruction(this string data)
         {
             return data.DelimitByCrLf()
@@ -29,6 +31,7 @@ namespace Common
                 .ToList();
         }
 
+        //Day3
         public static List<BitArray> ParseListBitArray(this string data)
         {
             return data.DelimitByCrLf()
@@ -39,16 +42,44 @@ namespace Common
                 })
                 .Select(ParseBoolListToBitArray)
                 .ToList();
-        } 
+        }
 
-        private static IEnumerable<string> DelimitByCrLf(this string data)
+        public static IEnumerable<string> DelimitByCrLf(this string data)
         {
             var delimiters = new[] {'\r', '\n'};
             return data.Split(delimiters, StringSplitOptions.RemoveEmptyEntries)
                 .AsEnumerable();
         }
 
-        private static char[] ParseStringToCharArray(string str)
+        public static IEnumerable<string> DelimitByBlankLines(this string data)
+        {
+            var delimiter = "\n\n";
+            return data.Split(delimiter, StringSplitOptions.RemoveEmptyEntries)
+                .AsEnumerable();
+        }
+
+        public static IEnumerable<string> DelimitByComma(this string data)
+        {
+            var delimiter = ',';
+            return data.Split(delimiter, StringSplitOptions.RemoveEmptyEntries)
+                .AsEnumerable();
+        }
+        
+        public static IEnumerable<string> DelimitBySpace(this string data)
+        {
+            var delimiter = ' ';
+            return data.Split(delimiter, StringSplitOptions.RemoveEmptyEntries)
+                .AsEnumerable();
+        }
+        
+        public static IEnumerable<string> DelimitByRightArrow(this string data)
+        {
+            var delimiter = " -> ";
+            return data.Split(delimiter, StringSplitOptions.RemoveEmptyEntries)
+                .AsEnumerable();
+        }
+
+        public static char[] ParseStringToCharArray(string str)
         {
             var charArray = new char[str.Length];
             for (var i = 0; i < str.Length; i++)
@@ -59,7 +90,7 @@ namespace Common
             return charArray;
         }
 
-        private static List<bool> ParseBinaryCharArrayIntoBoolList(IEnumerable<char> charArray)
+        public static List<bool> ParseBinaryCharArrayIntoBoolList(IEnumerable<char> charArray)
         {
             var boolStrings = charArray.Select(c =>
             {
@@ -76,7 +107,7 @@ namespace Common
             return boolStrings.Select(bool.Parse).ToList();
         }
 
-        private static BitArray ParseBoolListToBitArray(List<bool> boolList)
+        public static BitArray ParseBoolListToBitArray(List<bool> boolList)
         {
             var boolArray = new bool[boolList.Count];
             for (var i = 0; i < boolList.Count; i++)
@@ -86,12 +117,20 @@ namespace Common
             return new BitArray(boolArray);
         }
         
-        private static string ToTitleCase(this string str)
+        public static List<int> ParseListIntFromSpaceSeparatedList(this string data)
         {
-            var cultureInfo = System.Threading.Thread.CurrentThread.CurrentCulture;
-            return cultureInfo.TextInfo.ToTitleCase(str.ToLower());
+            return data.DelimitBySpace()
+                .Select(int.Parse)
+                .ToList();
         }
 
+        public static List<List<int>> ParseIntMatrixFromStringNumberMatrix(this string stringNumberMatrix)
+        {
+            return stringNumberMatrix.DelimitByCrLf()
+                .Select(ParseListIntFromSpaceSeparatedList)
+                .ToList();
+        }
+        
         public static int ParseInt(this BitArray bitArray)
         {
             var total = 0;
@@ -105,6 +144,12 @@ namespace Common
             }
 
             return total;
+        }
+        
+        public static string ToTitleCase(this string str)
+        {
+            var cultureInfo = System.Threading.Thread.CurrentThread.CurrentCulture;
+            return cultureInfo.TextInfo.ToTitleCase(str.ToLower());
         }
     }
 }

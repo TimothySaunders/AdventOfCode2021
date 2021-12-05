@@ -15,7 +15,7 @@ namespace Day1
             
             var url = "https://adventofcode.com/2021/day/1/input";
             var rawData = await AdventHttpClient.getInputDataFromUrl(url);
-            var sanitisedData = rawData.ParseListInt();
+            var sanitisedData = rawData.ParseListIntFromCrList();
 
             Console.WriteLine(D1P1.FindTotalIncreases(sanitisedData));
 
