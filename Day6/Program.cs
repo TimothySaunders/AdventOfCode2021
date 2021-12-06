@@ -18,7 +18,9 @@ namespace Day6
             // var testData = "3,4,3,1,2".DelimitByComma().ToList();
             // Console.WriteLine(D6P1P2.CalculateNumberAfterXDays(testData, 5));
             
-            Console.WriteLine(D6P1P2.CalculateNumberAfterXDays(sanitisedData,256));
+            Console.WriteLine(D6P1.CalculateNumberAfterXDays(sanitisedData,80));
+            
+            Console.WriteLine(D6P2.CalculateNumberAfterXDays(sanitisedData,256));
         }
     }
 }

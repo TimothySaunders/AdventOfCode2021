@@ -5,7 +5,7 @@ using Day6.Models;
 
 namespace Day6
 {
-    public class D6P1P2
+    public class D6P1
     {
         public static int CalculateNumberAfterXDays(List<string> data, int days)
         {
