@@ -10,8 +10,4 @@ W
 J
 Common/Models/Direction.cs,a\2\a28e92936546874e45f9bbf4a427bc6a28e2f8bf
 <
-Day5/D5P1.cs,f\5\f5e572edc8df2c0ee222e8130f040c73a3d58c36
-<
 Day5/D5P2.cs,6\9\692bfc2aaa56270d50aa7a1ce0fc2d814bab2d08
-?
-Day5/Program.cs,6\7\67d64ba20abcf8788a2dfeeb8dd5ebd34cc3acdd
