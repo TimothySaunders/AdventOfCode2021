@@ -41,3 +41,11 @@ M
 Day6/D6P1.cs,e\6\e6048cdf0cff935e5c76604c4040558dc96747e2
 ?
 Day6/Program.cs,2\b\2b7095e4534093a8df3333cafe96c0cffdac4e70
+<
+Day7/D7P1.cs,8\f\8f39ea98d867e057f210e9b9184e39c98a471309
+<
+Day7/D7P2.cs,7\c\7c4f4c4b38468bf9aa558f6ad144e37333796af1
+?
+Day7/Program.cs,0\7\07171b9568d97748cecd95c6c8efc6f76c35498c
+N
+Common/DataExtensionMethods.cs,e\e\eea719cc3285786428fc4bc4fc96a3939276a4e8
