@@ -85,6 +85,13 @@ namespace Common
             return data.Split(delimiter, StringSplitOptions.RemoveEmptyEntries)
                 .AsEnumerable();
         }
+        
+        public static IEnumerable<string> DelimitByDash(this string data)
+        {
+            var delimiter = "-";
+            return data.Split(delimiter, StringSplitOptions.RemoveEmptyEntries)
+                .AsEnumerable();
+        }
 
         public static char[] ParseStringToCharArray(string str)
         {
