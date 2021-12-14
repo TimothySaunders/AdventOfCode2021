@@ -55,3 +55,7 @@ J
 Day11/Models/Coordinate.cs,2\2\22d9ad2b1e76816f5974c6fb74c5f31548022556
 @
 Day10/Program.cs,d\5\d5d2479dc09c4775227f5bfdc6a8f51b67ae2a51
+@
+Day11/Program.cs,e\2\e2216787fc0191e33a5416d2b7a1c6d931bf13f5
+<
+Day11/D11.cs,4\2\4276d2e3798d95ef8989d774ea0ccbb30baf55ef
